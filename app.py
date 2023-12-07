@@ -1,13 +1,14 @@
 import streamlit as st
 import webbrowser
 import os
+from streamlit.components.v1 import html
 
 ## -------------------------- Open File -------------------------- ##
 # Mendapatkan path absolut dari direktori 'assets'
 assets_dir = os.path.join(os.path.dirname(__file__), 'assets')
 
 # Menggunakan path absolut untuk membuka file 'CV.pdf'
-cv_file_path = os.path.join(assets_dir, 'CV.pdf')
+cv_file_path = os.path.join(assets_dir, 'CV_New.pdf')
 ab_path = os.path.join(assets_dir, 'Abtest.png')
 anomaly_path = os.path.join(assets_dir, 'Anomaly.jpg')
 car_path = os.path.join(assets_dir, 'car.jpg')
@@ -86,16 +87,14 @@ def open_Project(link):
         
 ## -------------------------- GITHUB -------------------------- ##
 Github_url = "https://github.com/Muhammadridho100902"
-def open_Github():
-    webbrowser.open_new_tab(Github_url)
-## -------------------------- GMAIL -------------------------- ##
-email_address = 'mridhophs@gmail.com'
-def open_Gmail():
-    webbrowser.open(f"mailto:{email_address}")
-## -------------------------- INSTAGRAM -------------------------- ##
-Instagram_url = ""
-def open_Instagram():
-    webbrowser.open_new_tab(Instagram_url)
+Linkedin_url = "https://www.linkedin.com/in/muhammad-ridho-phageis-swara/"
+def open_page(url):
+    open_script= """
+        <script type="text/javascript">
+            window.open('%s', '_blank').focus();
+        </script>
+    """ % (url)
+    html(open_script)
     
 
 ## -------------------------- Header -------------------------- ##
@@ -139,7 +138,7 @@ with kereta2:
     st.markdown("##### Kereta Barang Indonesia")
     st.write("Through this analysis, I gained new insight into the use of freight trains in Indonesia, which are starting to be popular on the islands of Java and Sumatra.")
     if st.button("View Project", key='kereta_project'):
-        open_Project(kereta_link)
+        open_page(kereta_link)
     
 anomaly1, anomaly2 = st.columns(2)
 
@@ -149,7 +148,7 @@ with anomaly2:
     st.markdown("##### Anomaly Detection in Transaction")
     st.write("Anomaly detection in transactions means identifying unusual or unexpected patterns within transactions or related activities.")
     if st.button("View Project", key='anomaly_project'):
-        open_Project(anomaly_link)
+        open_page(anomaly_link)
     
 coffee1, coffee2 = st.columns(2)
 
@@ -159,7 +158,7 @@ with coffee2:
     st.markdown("##### Coffee Shop Sales")
     st.write("I'm walking you through an end-to-end analysis journey that covers essential steps like Business Understanding, Problem Statement, Goal Definition, and Exploratory Data Analysis (EDA).")
     if st.button("View Project", key='coffee_project'):
-        open_Project(coffee_link)
+        open_page(coffee_link)
 
 supply1, supply2 = st.columns(2)
 
@@ -169,7 +168,7 @@ with supply2:
     st.markdown("##### Supply Chain Analytics")
     st.write("I've immersed myself in the realm of supply chain analytics, and the results are concocting valuable business insights and recommendations.")
     if st.button("View Project", key='supply_project'):
-        open_Project(supply_link)
+        open_page(supply_link)
     
 report1, report2 = st.columns(2)
     
@@ -179,7 +178,7 @@ with report2:
     st.markdown("##### Self Service Reporting")
     st.write("The Self-Reporting Services Dashboard is a powerful and user-friendly tool meticulously designed for individuals to manage and monitor their self-reported activities seamlessly.")
     if st.button("View Project", key='report_project'):
-        open_Project(reporting_link)
+        open_page(reporting_link)
     
 ab1, ab2 = st.columns(2)
 
@@ -189,7 +188,7 @@ with ab2:
     st.markdown("##### A/B Testing of Themes")
     st.write("AB testing analysis is a powerful method used in the field of data science and experimentation to evaluate the effectiveness of different strategies, designs, or features within a product or system.")
     if st.button("View Project", key='ab_project'):
-        open_Project(ab_link)
+        open_page(ab_link)
     
 car1, car2 = st.columns(2)
     
@@ -199,7 +198,7 @@ with car2:
     st.markdown("##### Car vs Bike Image Classifier")
     st.write("Involving concepts from the field of Computer Vision, this project represents an attempt to teach the model to differentiate and identify images featuring two-wheeled and four-wheeled vehicles.")
     if st.button("View Project", key='car_project'):
-        open_Project(car_link)
+        open_page(car_link)
 
 dia1, dia2 = st.columns(2)
 
@@ -209,7 +208,7 @@ with dia2:
     st.markdown("##### Diabetes Web App")
     st.write("Diabetes Web App is a leading solution designed to support individuals in better management and understanding of their diabetes condition.")
     if st.button("View Project", key='diabet_project'):
-        open_Project(diabet_link)
+        open_page(diabet_link)
     
 sent1, sent2 = st.columns(2) 
     
@@ -219,7 +218,7 @@ with sent2:
     st.markdown("##### Sentiment Prediction Web App")
     st.write("Sentiment prediction is a field of sentiment analysis that focuses on developing models and algorithms to identify and understand sentiment or feelings contained in text, such as tweets")
     if st.button("View Project", key='sentiment_project'):
-        open_Project(sentiment_link)
+        open_page(sentiment_link)
     
 one1, one2 = st.columns(2)
 
@@ -229,7 +228,7 @@ with one2:
     st.markdown("##### One Piece Image Classification")
     st.write("By utilizing machine learning and deep learning techniques, this project focuses on developing a model that can recognize iconic characters, locations or certain scenes in One Piece.")
     if st.button("View Project", key='one_project'):
-        open_Project(one_piece_link)
+        open_page(one_piece_link)
 
 
 ## -------------------------- Contact and About Me -------------------------- ##
@@ -252,18 +251,13 @@ with col2:
 
     st.divider()  # 👈 Another horizontal rule
     
-    st.write("There are several contacts that you can use to collaborate. Phone Number :red[+6289629656884]")
+    st.write("There are several contacts that you can use to collaborate. Phone Number :red[+6289629656884] and my Gmail :red[mridhophs@gmail.com]")
     
-    st.markdown(f"[Open GitHub]({Github_url})")
-    
-    col1, col2, col3 = st.columns(3)
+    col1, col2= st.columns(2)
     
     with col1:
         if st.button("Github"):
-            open_Github()
+            open_page(Github_url)
     with col2:
-        if st.button("Gmail"):
-            open_Gmail()
-    with col3:
-        if st.button("Instagram"):
-            open_Instagram()
+        if st.button("Linkedin"):
+            open_page(Linkedin_url)
