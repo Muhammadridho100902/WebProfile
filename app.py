@@ -88,6 +88,7 @@ def open_Project(link):
 ## -------------------------- GITHUB -------------------------- ##
 Github_url = "https://github.com/Muhammadridho100902"
 Linkedin_url = "https://www.linkedin.com/in/muhammad-ridho-phageis-swara/"
+Gmail_url = "Mridhophs@gmail.com"
 def open_page(url):
     open_script= """
         <script type="text/javascript">
@@ -108,9 +109,11 @@ with col1:
     st.markdown("Dedicated to assisting enterprises by supporting :red[data-driven] decision-making")
     
     button1, button2 = st.columns(2)
+    # with button1:
+    #     if st.button("Hire Me", type="primary"):
+    #         st.button()
+            
     with button1:
-        st.button("Hire Me", type="primary")
-    with button2:
         st.download_button("Download CV",
                        data = file_data,
                        file_name= "Muhammad Ridho Cv.pdf",
