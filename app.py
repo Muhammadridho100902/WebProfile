@@ -23,7 +23,41 @@ supply_path = os.path.join(assets_dir, 'Supply.png')
 
 with open(cv_file_path, 'rb') as file:
     file_data = file.read()
+    
+with open(ab_path, 'rb') as file:
+    image_ab = file.read()
+    
+with open(anomaly_path, 'rb') as file:
+    image_anomaly = file.read()
+    
+with open(car_path, 'rb') as file:
+    image_car = file.read()
+    
+with open(coffee_path, 'rb') as file:
+    image_coffee = file.read()
+    
+with open(diabetes_path, 'rb') as file:
+    image_diabetes = file.read()
+    
+with open(kereta_path, 'rb') as file:
+    image_kereta = file.read()
+
+with open(onepiece_path, 'rb') as file:
+    image_onepiece = file.read()
+    
+with open(profile_path, 'rb') as file:
+    image_profile = file.read()
+
+with open(reporting_path, 'rb') as file:
+    image_reporting = file.read()
+    
+with open(sentiment_path, 'rb') as file:
+    image_sentiment = file.read()
         
+with open(supply_path, 'rb') as file:
+    image_supply = file.read()
+    
+
 ## -------------------------- File Project -------------------------- ##
 
 kereta_link = "https://www.linkedin.com/posts/muhammad-ridho-phageis-swara_kereta-barang-indonesia-activity-7092352697223319552-NQ6z?utm_source=share&utm_medium=member_desktop"
@@ -84,7 +118,7 @@ with col1:
                        key = 'download_cv_button')
 
 with col2:
-    st.image("assets\profile.jpg", use_column_width="auto")
+    st.image(image_profile, use_column_width="auto")
     
     
 ## -------------------------- Project -------------------------- ##
@@ -100,7 +134,7 @@ col1, col2 = st.columns(2)
 kereta1, kereta2 = st.columns(2)
 
 with kereta1:
-    st.image('assets\Kereta.png', use_column_width="always")
+    st.image(image_kereta, use_column_width="always")
 with kereta2:
     st.markdown("##### Kereta Barang Indonesia")
     st.write("Through this analysis, I gained new insight into the use of freight trains in Indonesia, which are starting to be popular on the islands of Java and Sumatra.")
@@ -110,7 +144,7 @@ with kereta2:
 anomaly1, anomaly2 = st.columns(2)
 
 with anomaly1:
-    st.image('assets\Anomaly.jpg', use_column_width="always")
+    st.image(image_anomaly, use_column_width="always")
 with anomaly2:
     st.markdown("##### Anomaly Detection in Transaction")
     st.write("Anomaly detection in transactions means identifying unusual or unexpected patterns within transactions or related activities.")
@@ -120,7 +154,7 @@ with anomaly2:
 coffee1, coffee2 = st.columns(2)
 
 with coffee1:
-    st.image('assets\Coffee.png', use_column_width="auto")
+    st.image(image_coffee, use_column_width="auto")
 with coffee2:
     st.markdown("##### Coffee Shop Sales")
     st.write("I'm walking you through an end-to-end analysis journey that covers essential steps like Business Understanding, Problem Statement, Goal Definition, and Exploratory Data Analysis (EDA).")
@@ -130,7 +164,7 @@ with coffee2:
 supply1, supply2 = st.columns(2)
 
 with supply1:
-    st.image('assets\Supply.png', use_column_width="auto")
+    st.image(image_supply, use_column_width="auto")
 with supply2:
     st.markdown("##### Supply Chain Analytics")
     st.write("I've immersed myself in the realm of supply chain analytics, and the results are concocting valuable business insights and recommendations.")
@@ -140,7 +174,7 @@ with supply2:
 report1, report2 = st.columns(2)
     
 with report1:
-    st.image('assets\Reporting.png', use_column_width="auto")
+    st.image(image_reporting, use_column_width="auto")
 with report2:
     st.markdown("##### Self Service Reporting")
     st.write("The Self-Reporting Services Dashboard is a powerful and user-friendly tool meticulously designed for individuals to manage and monitor their self-reported activities seamlessly.")
@@ -150,7 +184,7 @@ with report2:
 ab1, ab2 = st.columns(2)
 
 with ab1:
-    st.image('assets\Abtest.png', use_column_width="auto")
+    st.image(image_ab, use_column_width="auto")
 with ab2:
     st.markdown("##### A/B Testing of Themes")
     st.write("AB testing analysis is a powerful method used in the field of data science and experimentation to evaluate the effectiveness of different strategies, designs, or features within a product or system.")
@@ -160,7 +194,7 @@ with ab2:
 car1, car2 = st.columns(2)
     
 with car1:
-    st.image('assets\car.jpg', use_column_width="auto")
+    st.image(image_car, use_column_width="auto")
 with car2:
     st.markdown("##### Car vs Bike Image Classifier")
     st.write("Involving concepts from the field of Computer Vision, this project represents an attempt to teach the model to differentiate and identify images featuring two-wheeled and four-wheeled vehicles.")
@@ -170,7 +204,7 @@ with car2:
 dia1, dia2 = st.columns(2)
 
 with dia1:
-    st.image('assets\diabetes.png', use_column_width="auto")
+    st.image(image_diabetes, use_column_width="auto")
 with dia2:
     st.markdown("##### Diabetes Web App")
     st.write("Diabetes Web App is a leading solution designed to support individuals in better management and understanding of their diabetes condition.")
@@ -180,7 +214,7 @@ with dia2:
 sent1, sent2 = st.columns(2) 
     
 with sent1:
-    st.image('assets\sentiment.jpeg', use_column_width="auto")
+    st.image(image_sentiment, use_column_width="auto")
 with sent2:
     st.markdown("##### Sentiment Prediction Web App")
     st.write("Sentiment prediction is a field of sentiment analysis that focuses on developing models and algorithms to identify and understand sentiment or feelings contained in text, such as tweets")
@@ -190,7 +224,7 @@ with sent2:
 one1, one2 = st.columns(2)
 
 with one1:
-    st.image('assets\onepiece.jpg', use_column_width="auto")
+    st.image(image_onepiece, use_column_width="auto")
 with one2:
     st.markdown("##### One Piece Image Classification")
     st.write("By utilizing machine learning and deep learning techniques, this project focuses on developing a model that can recognize iconic characters, locations or certain scenes in One Piece.")
