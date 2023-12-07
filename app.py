@@ -254,6 +254,8 @@ with col2:
     
     st.write("There are several contacts that you can use to collaborate. Phone Number :red[+6289629656884]")
     
+    st.markdown(f"[Open GitHub]({Github_url})")
+    
     col1, col2, col3 = st.columns(3)
     
     with col1:
